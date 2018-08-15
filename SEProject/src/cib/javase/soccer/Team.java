@@ -3,7 +3,7 @@ package cib.javase.soccer;
 import java.util.ArrayList;
 
 public class Team {
-    
+
     int id;
     String name;
     ArrayList<Player> players = new ArrayList<Player>();

@@ -1,7 +1,7 @@
 package cib.javase.soccer;
 
 public class Goal {
-    
+
     int id;
     Team team;
     Player player;
@@ -16,11 +16,11 @@ public class Goal {
         this.time = time;
     }
 
-    
+
     public String toString() {
-        return "Goal scored by "+this.player.getName()+" at "+this.time+" for "+this.team.getName();
+        return "Goal scored by " + this.player.getName() + " at " + this.time + " for " + this.team.getName();
     }
-    
+
     public void setId(int id) {
         this.id = id;
     }

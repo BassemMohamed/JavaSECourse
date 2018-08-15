@@ -1,7 +1,7 @@
 package cib.javase.soccer;
 
 public class Player {
-    
+
     int id;
     int num;
     String name;
@@ -15,11 +15,11 @@ public class Player {
         this.age = age;
     }
 
-    
+
     public String toString() {
-        return "Player: "+this.name+", with number: "+this.num+" ,has age: "+this.age;
+        return "Player: " + this.name + ", with number: " + this.num + " ,has age: " + this.age;
     }
-    
+
     public void setId(int id) {
         this.id = id;
     }

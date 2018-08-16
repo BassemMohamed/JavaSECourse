@@ -11,6 +11,10 @@ public class Software extends Product {
         this.setPrice(price);
         this.license = license;
     }
+    
+    public String toString() {
+        return this.getName() + "," + this.getDescription() + "," + this.getPrice() + "," + this.getLicense();
+    }
 
     public void setLicense(String license) {
         this.license = license;

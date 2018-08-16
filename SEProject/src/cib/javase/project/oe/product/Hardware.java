@@ -12,6 +12,10 @@ public class Hardware extends Product implements Taxable {
         this.warrantyPeriod = warrantyPeriod;
     }
     
+    public String toString() {
+        return this.getName() + "," + this.getDescription() + "," + this.getPrice() + "," + this.getWarrantyPeriod();
+    }
+    
     public double getTax(double amount) {
         return ( (amount * Taxable.tax) / 100);
     }

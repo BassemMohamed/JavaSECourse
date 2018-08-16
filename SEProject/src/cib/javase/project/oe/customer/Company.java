@@ -8,9 +8,14 @@ public class Company extends Customer {
     public Company() {
         super();
     }
-
+    
     public Company(int id, String address, String name, String phone,String contact, int discount) {
         super(id, address, name, phone);
+        this.contact = contact;
+        this.discount = discount;
+    }
+    public Company(String address, String name, String phone,String contact, int discount) {
+        super(address, name, phone);
         this.contact = contact;
         this.discount = discount;
     }

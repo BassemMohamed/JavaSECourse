@@ -12,7 +12,7 @@ public class TestOE {
     
     public static void main(String[] args) {
         
-        Individual i = new Individual(801, "Sheraton", "Bassem", "01022", "2940628");
+        Individual i = new Individual("Sheraton", "Bassem", "01022", "2940628");
         
         Software s = new Software(301, "description", "Antivirues", 100, "0123456");
         Manual m = new Manual(201, "description", "Java Course", 250, "Hossam");

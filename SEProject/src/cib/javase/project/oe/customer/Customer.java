@@ -6,10 +6,21 @@ public class Customer {
     private String address;
     private String name;
     private String phone;
+    private static int counter = 1;
 
     public Customer() {
         
     }
+
+    public Customer(String address, String name, String phone) {
+        super();
+        this.address = address;
+        this.id = counter;
+        this.name = name;
+        this.phone = phone;
+        counter++;
+    }
+
     public Customer(int id, String address, String name, String phone) {
         super();
         this.address = address;
@@ -17,7 +28,7 @@ public class Customer {
         this.name = name;
         this.phone = phone;
     }
-    
+
     public String toString() {
         return ("Cus: " + this.id + ", Name: " + this.name + ", Phone: " + this.phone);
     }

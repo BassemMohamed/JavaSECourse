@@ -1,5 +1,9 @@
 package cib.javase.myclasses;
 
+import cib.javase.myclasses.customexception.EmpSalException;
+
+import cib.javase.oop.Emp;
+
 import java.awt.HeadlessException;
 
 import java.util.InputMismatchException;
@@ -54,7 +58,7 @@ public class TestExceptions {
     
     public static void main(String[] args) throws EmpSalException {
         //testOptionPane();
-        Emp e1 = new Emp(101, "Bassem", -5);
+        Emp e1 = new Emp(801,"Bassem", -5);
         System.out.println(e1);
     }
 }

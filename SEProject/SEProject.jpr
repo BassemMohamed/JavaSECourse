@@ -79,11 +79,23 @@
       </hash>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
       <hash n="jdkReference">
          <url n="id" path="../../../../AppData/Roaming/JDeveloper/system12.1.3.0.41.140521.1008/o.jdeveloper/1.8.0_65.jdk"/>
          <value n="isJDK" v="true"/>
          <value n="jdkVersion" v="1.8.0_65"/>
       </hash>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>

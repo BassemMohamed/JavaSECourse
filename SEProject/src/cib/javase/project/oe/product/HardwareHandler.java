@@ -44,9 +44,9 @@ public class HardwareHandler {
     
         
     public static Hardware getHardware(int hardwareId) {
-        String sql = "SELECT PRODUCT_NAME, PRODUCT_RETAIL_PRICE, PRODUCT_DESC, HARDWARE_WARRANTY_PRD" 
+        String sql = "SELECT HARDWARE_ID PRODUCT_NAME, PRODUCT_RETAIL_PRICE, PRODUCT_DESC, HARDWARE_WARRANTY_PRD" 
             +" FROM PRODUCTS, HARDWARE"
-            +" WHERE PRODUCTS.PRODUCT_ID = HARDWARE.PRODUCT_ID AND HARDWARE_ID = " 
+            +" WHERE PRODUCTS.PRODUCT_ID = HARDWARE.PRODUCT_ID AND PRODUCTS.PRODUCT_ID = " 
             + hardwareId;
         
         Connection conn = DBConnectionFactory.initConn(true);
@@ -58,7 +58,7 @@ public class HardwareHandler {
             rs = ps.executeQuery();
             
             while(rs.next()) {
-                h = new Hardware(hardwareId, rs.getString("PRODUCT_DESC"), rs.getString("PRODUCT_NAME"),
+                h = new Hardware(hardwareId , rs.getString("PRODUCT_DESC"), rs.getString("PRODUCT_NAME"),
                                  rs.getDouble("PRODUCT_RETAIL_PRICE"), rs.getInt("HARDWARE_WARRANTY_PRD"));
             }
             

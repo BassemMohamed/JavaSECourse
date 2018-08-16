@@ -1,12 +1,10 @@
 package cib.javase.project.oe.parameter;
 
-import cib.javase.project.oe.customer.Customer;
 import cib.javase.project.oe.db.DBConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class ParameterHandler {
     

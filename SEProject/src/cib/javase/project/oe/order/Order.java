@@ -78,6 +78,9 @@ public class Order {
     public ArrayList<OrderItem> getItems() {
         return items;
     }
+    public void setItems(ArrayList<OrderItem> items) {
+        this.items = items;
+    }
     public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }

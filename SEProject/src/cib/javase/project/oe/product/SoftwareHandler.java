@@ -47,9 +47,9 @@ public class SoftwareHandler {
     
         
     public static Software getSoftware(int softwareId) {
-        String sql = "SELECT PRODUCT_NAME, PRODUCT_RETAIL_PRICE, PRODUCT_DESC, SOFTWARE_LICENCE" 
+        String sql = "SELECT SOFTWARE_ID PRODUCT_NAME, PRODUCT_RETAIL_PRICE, PRODUCT_DESC, SOFTWARE_LICENCE" 
             +" FROM PRODUCTS, SOFTWARE"
-            +" WHERE PRODUCTS.PRODUCT_ID = SOFTWARE.PRODUCT_ID AND SOFTWARE_ID = " 
+            +" WHERE PRODUCTS.PRODUCT_ID = SOFTWARE.PRODUCT_ID AND PRODUCTS.PRODUCT_ID = " 
             + softwareId;
         
         Connection conn = DBConnectionFactory.initConn(true);
@@ -61,7 +61,7 @@ public class SoftwareHandler {
             rs = ps.executeQuery();
             
             while(rs.next()) {
-                s = new Software(softwareId, rs.getString("PRODUCT_DESC"), rs.getString("PRODUCT_NAME"),
+                s = new Software(softwareId , rs.getString("PRODUCT_DESC"), rs.getString("PRODUCT_NAME"),
                                  rs.getDouble("PRODUCT_RETAIL_PRICE"), rs.getString("SOFTWARE_LICENCE"));
             }
             

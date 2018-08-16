@@ -4,18 +4,32 @@ import cib.javase.project.oe.customer.Company;
 import cib.javase.project.oe.customer.CompanyHandler;
 import cib.javase.project.oe.customer.Customer;
 import cib.javase.project.oe.customer.CustomerHandler;
+import cib.javase.project.oe.order.Order;
+import cib.javase.project.oe.order.OrderHandler;
 import cib.javase.project.oe.order.OrderItem;
 import cib.javase.project.oe.product.Hardware;
 import cib.javase.project.oe.product.HardwareHandler;
 import cib.javase.project.oe.product.Software;
 import cib.javase.project.oe.product.SoftwareHandler;
 
+import java.util.Date;
+
 public class TestJDBC {
     
     public static void main(String[] args) {
+
+        // Testing Order Handler
+        System.out.println(OrderHandler.getOrder(120));        
         
         System.exit(0);
-        
+
+        // Testing Order Handler
+        Customer c = CustomerHandler.getCustomer(100);
+        Order o = new Order(c, 901, new Date());
+        o.addOrderItem(SoftwareHandler.getSoftware(109));
+        o.addOrderItem(SoftwareHandler.getSoftware(107));
+        OrderHandler.insertOrder(o);
+
         // Testing Customer Handler
         Customer c1 = new Customer("Sheraton", "Bassem", "01022755420");
         Customer c2 = new Customer("Nasr City", "Mohamed", "01022755420");
@@ -30,8 +44,8 @@ public class TestJDBC {
         System.out.println(CustomerHandler.getAllCustomers());
 
        // Testing Company Handler
-        Company c = new Company("Nasr City", "CIB", "01022", "Hossam", 500);
-        CompanyHandler.insertCompany(c);
+        Company co = new Company("Nasr City", "CIB", "01022", "Hossam", 500);
+        CompanyHandler.insertCompany(co);
         System.out.println(CompanyHandler.getCompany(102));
 
        // Testing Software Handler

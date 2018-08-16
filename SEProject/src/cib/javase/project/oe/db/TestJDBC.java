@@ -4,6 +4,7 @@ import cib.javase.project.oe.customer.Company;
 import cib.javase.project.oe.customer.CompanyHandler;
 import cib.javase.project.oe.customer.Customer;
 import cib.javase.project.oe.customer.CustomerHandler;
+import cib.javase.project.oe.order.OrderItem;
 import cib.javase.project.oe.product.Hardware;
 import cib.javase.project.oe.product.HardwareHandler;
 import cib.javase.project.oe.product.Software;

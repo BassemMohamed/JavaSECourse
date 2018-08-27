@@ -9,7 +9,7 @@ public class Customer {
     private static int counter = 1;
 
     public Customer() {
-        
+
     }
 
     public Customer(String address, String name, String phone) {

@@ -1,19 +1,18 @@
 package cib.javase.project.oe.parameter;
 
 import cib.javase.project.oe.db.DBConnectionFactory;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ParameterHandler {
-    
+
     public static double getParameter(String name) {
-        
-        String sql = "SELECT PARAM_VALUE" 
-            + " FROM PARAMETERS"
-            + " WHERE PARAM_NAME = ?"; 
-        
+
+        String sql = "SELECT PARAM_VALUE" + " FROM PARAMETERS" + " WHERE PARAM_NAME = ?";
+
         Connection conn = DBConnectionFactory.initConn(true);
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -22,11 +21,11 @@ public class ParameterHandler {
             ps = conn.prepareStatement(sql);
             ps.setString(1, name);
             rs = ps.executeQuery();
-                        
-            while(rs.next()) {
+
+            while (rs.next()) {
                 val = rs.getDouble("PARAM_VALUE");
             }
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -34,7 +33,7 @@ public class ParameterHandler {
             DBConnectionFactory.closePreParedStatement(ps);
             DBConnectionFactory.closeConn();
         }
-        
+
         return (val == -1) ? null : val;
     }
 }

@@ -1,7 +1,7 @@
 package cib.javase.project.oe.parameter;
 
 public class Parameter {
-    
+
     String name;
     double value;
 
@@ -14,12 +14,15 @@ public class Parameter {
     public void setName(String name) {
         this.name = name;
     }
+
     public String getName() {
         return name;
     }
+
     public void setValue(double value) {
         this.value = value;
     }
+
     public double getValue() {
         return value;
     }

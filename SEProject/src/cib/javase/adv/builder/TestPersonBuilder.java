@@ -29,19 +29,19 @@ public class TestPersonBuilder {
             p.print();
         }
 
-        System.out.println("********************************");        
+        System.out.println("*********************************************************************");
         // Foreach using anonymous
         list.forEach(new Consumer<Person>(){
             public void accept(Person p) {
                 p.print();
             }
         });
-
-        System.out.println("********************************");        
+    
+        System.out.println("*********************************************************************");
         // Foreach using Lambda
         list.forEach((p) -> p.print());
 
-        System.out.println("********************************");
+        System.out.println("*********************************************************************");
         // Doing a filter before printing using anonymous
         list.stream().filter(new Predicate<Person>(){
                 public boolean test(Person p) {
@@ -53,7 +53,7 @@ public class TestPersonBuilder {
                 }
             });
         
-       System.out.println("********************************");
+        System.out.println("*********************************************************************");
        // Doing a filter before printing using lambda
        list.stream().filter((p) -> p.getGivenName().startsWith("J")).forEach((p) -> p.print());
    }

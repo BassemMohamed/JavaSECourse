@@ -30,9 +30,9 @@ public class Person {
     }
 
     public void print() {
-        System.out.println("\nName: " + givenName + " " + surName + "\n" + "Age: " + age + "\n" + "Gender: " + gender +
-                           "\n" + "eMail: " + eMail + "\n" + "Phone: " + phone + "\n" + "Address: " + address + "\n" +
-                           "City: " + city + "\n" + "State: " + state + "\n" + "Code: " + code + "\n");
+        System.out.println("Name: " + givenName + " " + surName + "Age: " + age + "Gender: " + gender +
+                            "eMail: " + eMail + "Phone: " + phone + "Address: " + address + 
+                           "City: " + city + "State: " + state + "Code: " + code);
     }
 
     public static List<Person> createShortList() {

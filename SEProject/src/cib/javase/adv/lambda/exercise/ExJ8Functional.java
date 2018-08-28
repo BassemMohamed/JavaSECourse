@@ -24,19 +24,19 @@ public class ExJ8Functional {
         printFiltered(persons, (p) -> p != null, (p) -> System.out.println(p));
         System.out.println("*********");
         printFiltered(persons,
-                      (p) -> ((Person)p).getFirstname().startsWith("A"),
-                      (p) -> System.out.println(((Person)p).getFirstname()));
+                      (p) -> p.getFirstname().startsWith("A"),
+                      (p) -> System.out.println(p.getFirstname()));
         System.out.println("*********");
         printFiltered(persons,
-                      (p) -> ((Person)p).getLastname().startsWith("M"),
-                      (p) -> System.out.println(((Person)p).getLastname()));
+                      (p) -> p.getLastname().startsWith("M"),
+                      (p) -> System.out.println(p.getLastname()));
     }
     
     public static void sort(List<Person> persons) {
         Collections.sort( persons, (p1, p2) -> p1.getFirstname().compareTo(p2.getFirstname()) );
     }
     
-    public static void printFiltered(List<Person> persons, Predicate cnd, Consumer prnt) {
+    public static void printFiltered(List<Person> persons, Predicate<Person> cnd, Consumer<Person> prnt) {
         for(Person p : persons) {
             if(cnd.test(p))
                 prnt.accept(p);

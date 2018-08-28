@@ -1,0 +1,11 @@
+Lambda Agenda
+- Anonymous class
+- MaxRateAnalyzer Interface
+- boolean checkMaxRate(double amount)
+- boolean checkPersonRate(Person p1, MaxRateAnalyzer maxRateAnalyzer)
+- Greetings Interface
+- More Lambda Expressions
+- Runnable Interface
+- @FunctionalInterface 
+- Foreach Lambda
+- Exercise

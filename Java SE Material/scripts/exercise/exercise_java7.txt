@@ -1,0 +1,68 @@
+
+public class ExerciseJava7 {
+public static void main(String[] args) {
+    
+   List<Person> personsList =  Arrays.asList(
+                new Person(101, "Ahmed", "Emara", 30),
+                new Person(101, "Mostafa", "Fawzy", 29),
+                new Person(101, "Hamada", "Ayman", 25),
+                new Person(101, "Amgad", "Aly", 34)
+                );
+   System.out.println(personsList.size());
+   /*
+    ArrayList pList = new ArrayList();
+   pList.addAll(personsList);
+   System.out.println(pList.size());
+    */
+   // Exercise
+   // 1. Sort List by Last NAme
+   Collections.sort(personsList, new Comparator<Person>(){
+
+            @Override
+            public int compare(Person p1, Person p2) {
+                return p1.getPersonLastName().compareTo(p2.getPersonLastName());
+            }
+        });
+   // 2. Create a method to Print All List Persons
+   System.out.println("Printing All Persons");
+   printAllPersons(personsList);
+   
+   System.out.println("Printing Conditionally Persons First Name A");
+   // 3. Create a method to print person first name start with A
+   printPersonsConditionally(personsList, new Condition(){
+            @Override
+            public boolean test(Person p) {
+                return p.getPersonFirstName().startsWith("A") ;
+            }
+        });
+   
+       System.out.println("Printing Conditionally Persons Last NAme A");
+       // 3. Create a method to print person first name start with A
+       printPersonsConditionally(personsList, new Condition(){
+                @Override
+                public boolean test(Person p) {
+                    return p.getPersonLastName().startsWith("A") ;
+                }
+            });
+       
+   
+   
+   }
+
+    private static void printAllPersons(List<Person> personsList) {
+        for(Person p : personsList){
+            System.out.println(p);
+        }
+    }
+
+    private static void printPersonsConditionally(List<Person> personsList, Condition condition) {
+        for(Person p : personsList){
+            if(condition.test(p))
+                System.out.println(p);
+        }
+    }
+    
+    interface Condition{
+        public abstract boolean test(Person p);
+    }
+}

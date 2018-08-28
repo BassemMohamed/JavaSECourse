@@ -1,0 +1,62 @@
+package javase.adv.labda_expressions.brains.exercise;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+
+public class ExcerciseJava8FunctionInterfaces {
+    public static void main(String[] args) {
+       List<Person> personsList =  Arrays.asList(
+                    new Person(101, "Ahmed", "Emara", 30),
+                    new Person(101, "Mostafa", "Fawzy", 29),
+                    new Person(101, "Hamada", "Ayman", 25),
+                    new Person(101, "Amgad", "Aly", 34)
+                    );
+       System.out.println(personsList.size());
+       /*
+        ArrayList pList = new ArrayList();
+       pList.addAll(personsList);
+       System.out.println(pList.size());
+        */
+       // Exercise
+       // 1. Sort List by Last NAme
+       Collections.sort(personsList, (p1, p2)->p1.getPersonLastName().compareTo(p2.getPersonLastName()));
+       
+       // 2. Create a method to Print All List Persons
+       System.out.println("Printing All Persons");
+       // printAllPersons(personsList);
+           printPersonsConditionally(personsList, (p)->true,  p ->   System.out.println(p));
+               
+               
+       System.out.println("Printing Conditionally Persons First Name A");
+       // 3. Create a method to print person first name start with A
+       printPersonsConditionally(personsList, (p)->p.getPersonFirstName().startsWith("A"), p ->   System.out.println(p.getPersonFirstName()));
+       
+           System.out.println("Printing Conditionally Persons Last NAme A");
+           // 3. Create a method to print person first name start with A
+           printPersonsConditionally(personsList, (p)->p.getPersonLastName().startsWith("A"), p ->   System.out.println(p.getPersonLastName()));
+           
+       
+       
+       }
+       /*
+        private static void printAllPersons(List<Person> personsList) {
+            for(Person p : personsList){
+                System.out.println(p);
+            }
+        }
+       */
+        private static void printPersonsConditionally(List<Person> personsList, Predicate<Person> predicate,
+                               Consumer<Person> consumer  ) {
+            for(Person p : personsList){
+                if(predicate.test(p))
+                     consumer.accept(p);
+            }
+        }
+        
+       //        interface Condition{
+       //            public abstract boolean test(Person p);
+       //        }
+  }

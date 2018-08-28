@@ -1,0 +1,74 @@
+package javase.adv.les08.BuilderPattern.persons;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+
+import javase.adv.les08.BuilderPattern.persons.Person.Builder;
+
+public class TestPerson {
+   public static void main(String[] args) {
+        
+
+   
+    Person person1 = new Person.Builder().setGivenName("Ahmed").setSurName("Aly").setAge(27)
+        .setAddress("Cairo").setCity("Cairo").setPhone("012653423").setGender(Gender.MALE)
+        .setEMail("ahmed@yahoo.com").build();
+   
+   
+            
+   
+      System.out.println("Person data : ");
+        person1.print();
+        
+        person1.setCity("Aswan");
+        
+        System.out.println("***************");
+        person1.print();
+        
+        
+    System.out.println("************** Create Short List *******");
+        List<Person> personsList = Person.createShortList();
+        for(Person p : personsList){
+            System.out.println("Given name : "+p.getGivenName());
+        }
+        
+        System.out.println("****** Iteration using Collection foreach *******");
+        personsList.forEach(new Consumer<Person>(){
+
+            @Override
+            public void accept(Person p) {
+                System.out.println("Given name : "+p.getGivenName());
+            }
+        });
+        
+        
+        
+       System.out.println("****** Iteration using Collection foreach Lambda *******");
+       personsList.forEach(p-> System.out.println("Given name : "+p.getGivenName()));
+       
+       
+       System.out.println("************ Iteration using Collection with Filters, Streams Java 7 ********");
+       personsList.stream()
+           .filter(new Predicate<Person>(){
+            @Override
+            public boolean test(Person p) {
+                return p.getGivenName().startsWith("J");
+            }
+            })
+           .forEach(new Consumer<Person>(){
+            @Override
+            public void accept(Person p) {
+                System.out.println("Given name : "+p.getGivenName());
+                }});
+       
+       
+       System.out.println("************ Iteration using Collection with Filters, Streams Java 8 ********");
+            Predicate<Person> predicatePersons = p->p.getGivenName().startsWith("J");
+       personsList.stream()
+           .filter(predicatePersons)
+           .forEach(p->System.out.println("Given name : "+p.getGivenName()));
+
+   }
+}

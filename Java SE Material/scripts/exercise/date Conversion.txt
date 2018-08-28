@@ -1,0 +1,6 @@
+// conversion
+     java.util.Date d1 = java.sql.Date.valueOf(nextTues);
+      System.out.println(d1);
+      java.sql.Date sqlDate;
+      LocalDate nn = new java.sql.Date(d1.getTime()).toLocalDate();
+      System.out.println(nn);

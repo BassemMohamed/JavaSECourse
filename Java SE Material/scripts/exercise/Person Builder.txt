@@ -1,0 +1,212 @@
+package javase.adv.les08.BuilderPattern.persons;
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+public class Person {
+       private String givenName;
+       private String surName;
+       private int age;
+       private Gender gender;
+       private String eMail;
+       private String phone;
+       private String address;
+       private String city;
+       private String state;
+       private String code;
+
+    private Person(Builder builder) {
+          givenName = builder.givenName;
+          surName = builder.surName;
+          age = builder.age;
+          gender = builder.gender;
+          eMail = builder.eMail;
+          phone = builder.phone;
+          address = builder.address;
+          city = builder.city;
+          state = builder.state;
+          code = builder.code;
+    }
+
+
+    public String getGivenName() {
+        return givenName;
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public String getEMail() {
+        return eMail;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void print(){
+      System.out.println(
+        "\nName: " + givenName + " " + surName + "\n" + 
+        "Age: " + age + "\n" +
+        "Gender: " + gender + "\n" + 
+        "eMail: " + eMail + "\n" + 
+        "Phone: " + phone + "\n" +
+        "Address: " + address + "\n" + 
+        "City: " + city + "\n" +
+        "State: " + state + "\n" +
+        "Code: " + code + "\n");
+      
+   } 
+    
+    public static List<Person> createShortList(){
+        List<Person> personList = new ArrayList<>();
+        
+        personList.add(
+          new Person.Builder()
+                .setGivenName("Bob")
+                .setSurName("Baker")
+                .setAge(23)
+                .setGender(Gender.MALE)
+                .setEMail("bob.baker@example.com")
+                .setPhone("201-121-4678")
+                .setAddress("44 4th St")
+                .setCity("Smallville")
+                .setState("KS")
+                .setCode("12333")
+                .build() 
+          );
+        
+        personList.add(
+          new Person.Builder()
+                .setGivenName("Jane")
+                .setSurName("Doe")
+                .setAge(25)
+                .setGender(Gender.FEMALE)
+                .setEMail("jane.doe@example.com")
+                .setPhone("202-123-4678")
+                .setAddress("33 3rd St")
+                .setCity("Smallville")
+                .setState("KS")
+                .setCode("12333")
+                .build() 
+          );
+        
+        personList.add(
+          new Person.Builder()
+                .setGivenName("John")
+                .setSurName("Doe")
+                .setAge(28)
+                .setGender(Gender.MALE)
+                .setEMail("john.doe@example.com")
+                .setPhone("202-123-4678")
+                .setAddress("33 3rd St")
+                .setCity("Smallville")
+                .setState("KS")
+                .setCode("12333")
+                .build()
+        );
+       return personList; 
+    }
+    
+    
+    public static class Builder{
+        private String givenName;
+        private String surName;
+        private int age;
+        private Gender gender;
+        private String eMail;
+        private String phone;
+        private String address;
+        private String city;
+        private String state;
+        private String code;
+        
+        public Builder(){
+            
+        }
+
+        public Builder setGivenName(String givenName) {
+            this.givenName = givenName;
+            return this;
+        }
+
+        public Builder setSurName(String surName) {
+            this.surName = surName;
+            return this;
+        }
+
+        public Builder setAge(int age) {
+            this.age = age;
+            return this;
+        }
+
+        public Builder setGender(Gender gender) {
+            this.gender = gender;
+            return this;
+        }
+
+        public Builder setEMail(String eMail) {
+            this.eMail = eMail;
+            return this;
+        }
+
+        public Builder setPhone(String phone) {
+            this.phone = phone;
+            return this;
+        }
+
+        public Builder setAddress(String address) {
+            this.address = address;
+            return this;
+        }
+
+        public Builder setCity(String city) {
+            this.city = city;
+            return this;
+        }
+
+        public Builder setState(String state) {
+            this.state = state;
+            return this;
+        }
+
+        public Builder setCode(String code) {
+            this.code = code;
+            return this;
+        }
+    
+        public Person build(){
+            return new Person(this);
+        }
+    }
+}

@@ -44,7 +44,7 @@ public class TestIOStreams {
 
         } catch (Exception e) {
             e.printStackTrace();
-        } 
+        }
         
     }
 

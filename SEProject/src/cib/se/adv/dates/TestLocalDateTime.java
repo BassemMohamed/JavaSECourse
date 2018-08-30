@@ -29,8 +29,7 @@ public class TestLocalDateTime {
         System.out.println("Course starts: " + courseStart);
         System.out.println("Course ends:   " + courseEnd); 
         
-        long courseHrs = (courseEnd.getHour() - courseStart.getHour()) *
-                        (courseStart.until(courseEnd, ChronoUnit.DAYS) + 1);
+        long courseHrs = (courseEnd.getHour() - courseStart.getHour()) * (courseStart.until(courseEnd, ChronoUnit.DAYS) + 1);
         System.out.println("Course is:     " + courseHrs + " hours long.");
     }
     

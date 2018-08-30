@@ -2,7 +2,9 @@
 public class TestLocalDate {
    public static void main(String[] args) {
    
-   LocalDate now, bDate, nowPlusMonth, nowMinus5Days, nowPlus5Days, customDate, nextTues, lastTues;
+   LocalDate now, bDate, nowPlusMonth, nowMinus5Days, nowPlus5Days, 
+				customDate, nextTues, lastTues;
+   
    now = LocalDate.now();
    System.out.println("Today date  : "+now);
    
